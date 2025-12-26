@@ -26,6 +26,7 @@ namespace Kendo_WidgetSitefinity.Mvc.Controllers
         }
 
         [HttpPost]
+        [Route("Books/")]
         public ActionResult Books([DataSourceRequest] DataSourceRequest request)
         {
             IEnumerable<Book> books = KendoController._library;
