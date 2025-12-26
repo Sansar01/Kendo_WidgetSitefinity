@@ -1,0 +1,71 @@
+﻿using Kendo_WidgetSitefinity.Mvc.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Telerik.Sitefinity.Mvc;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+
+namespace Kendo_WidgetSitefinity.Mvc.Controllers
+{
+    [ControllerToolboxItem(Name = "KendoBooks", SectionName = "Kendos", Title = "Kendo Books")]
+    public class KendoController : Controller
+    {
+        public ActionResult Index()
+        {
+            var sfAppPath = System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath;
+
+            if (!sfAppPath.EndsWith("/", StringComparison.Ordinal))
+                sfAppPath = string.Concat(sfAppPath, "/");
+
+            this.ViewBag.sfAppPath = HttpUtility.HtmlEncode(sfAppPath);
+
+            return this.View("Default",new BooksViewModel());
+        }
+
+        [HttpPost,Route("home")]
+        public ActionResult Books([DataSourceRequest] DataSourceRequest request)
+        {
+            IEnumerable<Book> books = KendoController._library;
+            books = books.Skip((request.Page - 1) * request.PageSize);
+
+            books = books.Take(request.PageSize);
+            var dataSourceResult = new DataSourceResult()
+            {
+                Data = books.ToList(),
+                Total = KendoController._library.Count
+            };
+
+            return Json(dataSourceResult, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost, Route("home/vote/{title}")]
+        public JsonResult Vote(string title)
+        {
+            var matchingBooks = KendoController._library.Where(b => b.Title == title);
+
+            foreach (var book in matchingBooks)
+            {
+                book.Vote();
+            }
+
+            return this.Json(matchingBooks.First().Points, JsonRequestBehavior.DenyGet);
+        }
+
+        private static readonly List<Book> _library = new List<Book>(10)
+            {
+                new Book("Beatrix Potter", "The Tale Of Peter Rabbit"),
+                new Book("Julia Donaldson", "The Gruffalo"),
+                new Book("Michael Rosen", "We're Going on a Bear Hunt"),
+                new Book("Judith Kerr", "The Tiger Who Came to Tea"),
+                new Book("AA Milne", "Winnie the Pooh"),
+                new Book("Enid Blyton", "The Enchanted Wood"),
+                new Book("Jill Murphy", "The Worst Witch"),
+                new Book("Roald Dahl", "Charlie and the Chocolate Factory"),
+                new Book("Jacqueline Wilson", "The Story of Tracy Beaker"),
+                new Book("Michelle Magorian", "Goodnight Mister Tom")
+            };
+    }
+}
