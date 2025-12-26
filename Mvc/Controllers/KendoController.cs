@@ -25,7 +25,7 @@ namespace Kendo_WidgetSitefinity.Mvc.Controllers
             return this.View("Default",new BooksViewModel());
         }
 
-        [HttpPost,Route("home")]
+        [HttpPost]
         public ActionResult Books([DataSourceRequest] DataSourceRequest request)
         {
             IEnumerable<Book> books = KendoController._library;
@@ -41,7 +41,7 @@ namespace Kendo_WidgetSitefinity.Mvc.Controllers
             return Json(dataSourceResult, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost, Route("home/vote/{title}")]
+        [HttpPost]
         public JsonResult Vote(string title)
         {
             var matchingBooks = KendoController._library.Where(b => b.Title == title);
