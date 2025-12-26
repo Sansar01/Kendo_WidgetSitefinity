@@ -4,7 +4,7 @@
         var sf_appPath = $('#sfAppPath').val();
 
         var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-        $.post(sf_appPath + '/Kendo/Vote/' + dataItem.Title, function (data) {
+        $.post(sf_appPath + 'Vote/' + dataItem.Title, function (data) {
             $('#booksGrid').data('kendoGrid').dataSource.read();
             $("#booksGrid").data('kendoGrid').refresh();
         });
