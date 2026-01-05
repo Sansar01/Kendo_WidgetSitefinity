@@ -1156,6 +1156,7 @@
     <Content Include="Mvc\Controllers\readme.txt" />
     <Content Include="Mvc\Models\readme.txt" />
     <Content Include="Mvc\Scripts\kendo-books-widget.js" />
+    <Content Include="Mvc\Scripts\News\designerview-simple.js" />
     <Content Include="Mvc\Scripts\telerik-license.js" />
     <Content Include="Mvc\Views\readme.txt" />
     <Content Include="Mvc\Views\Shared\readme.txt" />
@@ -1209,6 +1210,9 @@
     <Content Include="App_Data\RadSpell\de-DE.tdf" />
     <Content Include="App_Data\GeoLocation\GeoLite2-City.mmdb" />
     <Content Include="Mvc\Views\Kendo\Default.cshtml" />
+    <Content Include="Mvc\Views\News\DesignerView.Simple.cshtml" />
+    <Content Include="Mvc\Views\News\DesignerView.Simple.json" />
+    <Content Include="Mvc\Views\News\Detail.Single.cshtml" />
     <None Include="packages.config" />
     <Content Include="Sitefinity\ExternalLibraries\LibWebP\libwebp_x86.sflib" />
     <Content Include="Sitefinity\ExternalLibraries\LibWebP\libwebp_x64.sflib" />
@@ -1328,7 +1332,6 @@
     <Content Include="ResourcePackages\Bootstrap5\MVC\Views\BlogPost\List.BlogPostList.cshtml" />
     <Content Include="ResourcePackages\Bootstrap5\MVC\Views\BlogPost\Detail.DetailPage.cshtml" />
     <Content Include="ResourcePackages\Bootstrap5\MVC\Views\AccountActivation\AccountActivation.AccountActivation.cshtml" />
-    <Content Include="ResourcePackages\Bootstrap5\client-components\fields\html-field\sf-html-field.sf-cshtml" />
     <Content Include="ResourcePackages\Bootstrap5\assets\src\vendors\_index.scss" />
     <Content Include="ResourcePackages\Bootstrap5\assets\src\vendors\_fontawesome.scss" />
     <Content Include="ResourcePackages\Bootstrap5\assets\src\vendors\_bootstrap_variables_overrides.scss" />
@@ -1341,6 +1344,10 @@
     <Content Include="ResourcePackages\Bootstrap5\assets\dist\js\bootstrap.min.js.map" />
     <Content Include="ResourcePackages\Bootstrap5\assets\dist\css\main.min.css.map" />
     <Content Include="ResourcePackages\Bootstrap5\assets\dist\css\main.css.map" />
+    <None Include="ResourcePackages\Bootstrap5\client-components\fields\html-field\sf-html-field.sf-cshtml" />
+    <None Include="ResourcePackages\Bootstrap5\client-components\Selectors\lists\sf-lists-selector.sf-cshtml" />
+    <Content Include="ResourcePackages\Bootstrap5\client-components\Selectors\Common\sf-provider-selector.cshtml" />
+    <Content Include="ResourcePackages\Bootstrap5\MVC\Views\News\Detail.Single.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,8 @@
+﻿<div ng-show="isProviderSelectorVisible" is-open="isOpen">
+
+    <select class="form-control" ng-model="selectedProvider" ng-change="selectProvider(selectedProvider)"
+            ng-options="provider.Name as provider.Title for provider in providers">
+        <option disabled value="">{{providerLabel}}</option>
+    </select>
+
+</div>

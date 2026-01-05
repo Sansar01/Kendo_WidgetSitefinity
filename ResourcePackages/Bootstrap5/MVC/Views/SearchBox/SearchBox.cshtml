@@ -31,7 +31,6 @@
     <input type="hidden" data-sf-role="scoringSettings" value='@(ViewBag.ScoringSettings ?? string.Empty)' />
     <input type="hidden" data-sf-role="searchInAllSitesInTheIndex" value='@(Model.SearchInAllSitesInTheIndex.HasValue ? Model.SearchInAllSitesInTheIndex.ToString() : string.Empty)' />
 </div>
-</div>
 
 @* The inline editing functionality is loading jQuery too. *@
 @Html.Script(ScriptRef.JQuery, "jquery", false)
