@@ -1155,6 +1155,7 @@
     <Content Include="App_Data\RadCaptcha\Z.wav" />
     <Content Include="Mvc\Controllers\readme.txt" />
     <Content Include="Mvc\Models\readme.txt" />
+    <Content Include="Mvc\Scripts\chart.js" />
     <Content Include="Mvc\Scripts\kendo-books-widget.js" />
     <Content Include="Mvc\Scripts\News\designerview-simple.js" />
     <Content Include="Mvc\Scripts\telerik-license.js" />
@@ -1183,6 +1184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AzureWebRole.cs" />
+    <Compile Include="Mvc\Controllers\KendoChartApiController.cs" />
     <Compile Include="Mvc\Controllers\KendoController.cs" />
     <Compile Include="Mvc\Models\Book.cs" />
     <Compile Include="Mvc\Models\BookViewModel.cs" />
@@ -1213,6 +1215,7 @@
     <Content Include="Mvc\Views\News\DesignerView.Simple.cshtml" />
     <Content Include="Mvc\Views\News\DesignerView.Simple.json" />
     <Content Include="Mvc\Views\News\Detail.Single.cshtml" />
+    <Content Include="Mvc\Views\KendoChartApi\Default.cshtml" />
     <None Include="packages.config" />
     <Content Include="Sitefinity\ExternalLibraries\LibWebP\libwebp_x86.sflib" />
     <Content Include="Sitefinity\ExternalLibraries\LibWebP\libwebp_x64.sflib" />
